@@ -19,7 +19,8 @@ def get_price(location,sqft,bhk,bath):
     x[2]=bhk
     if loc_index>=0:
         x[loc_index]=1
-
+    #print(x)
+    #print([x])
     return round(__model.predict([x])[0],2)
 
 
@@ -39,4 +40,4 @@ def load_data():
 if __name__=="util":
     load_data()
     #print(get_location_name()) 
-    #print(get_price('electronic city',1000,3,2))
+    #print(get_price('1st block jayanagar',1000,3,2))

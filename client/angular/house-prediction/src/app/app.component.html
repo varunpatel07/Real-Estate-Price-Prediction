@@ -1,0 +1,44 @@
+
+<div class="img"></div>
+<form class="form">
+	<h2>Area (Square Feet)</h2>
+    <input class="area"  #sqft type="email" id="uiSqft" class="floatLabel" name="Squareft" value="1000">
+	<h2>BHK</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-bhk-1" [(ngModel)]="uiBHK" name="bhk_select" value="1"/>
+		<label for="radio-bhk-1">1</label>
+		<input type="radio" id="radio-bhk-2" [(ngModel)]="uiBHK" name="bhk_select"value="2" checked/>
+		<label for="radio-bhk-2">2</label>
+		<input type="radio" id="radio-bhk-3" [(ngModel)]="uiBHK"  name="bhk_select" value="3"/>
+		<label for="radio-bhk-3">3</label>
+		<input type="radio" id="radio-bhk-4" [(ngModel)]="uiBHK" name="bhk_select" value="4"/>
+		<label for="radio-bhk-4">4</label>
+		<input type="radio" id="radio-bhk-5" [(ngModel)]="uiBHK" name="bhk_select" value="5"/>
+		<label for="radio-bhk-5">5</label>
+	</div>
+	</form>
+<form class="form">
+	<h2>Bath</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-bath-1" [(ngModel)]="uiBathrooms" name="bath_select" value="1"/>
+		<label for="radio-bath-1">1</label>
+		<input type="radio" id="radio-bath-2" [(ngModel)]="uiBathrooms" name="bath_select" value="2" checked/>
+		<label for="radio-bath-2">2</label>
+		<input type="radio" id="radio-bath-3" [(ngModel)]="uiBathrooms"name="bath_select" value="3"/>
+		<label for="radio-bath-3">3</label>
+		<input type="radio" id="radio-bath-4" [(ngModel)]="uiBathrooms" name="bath_select" value="4"/>
+		<label for="radio-bath-4">4</label>
+		<input type="radio" id="radio-bath-5" [(ngModel)]="uiBathrooms" name="bath_select" value="5"/>
+		<label for="radio-bath-5">5</label>
+	</div>
+		<h2>Location</h2>
+	<div>
+  <select  #cityvalue class="location" name="" id="uiLocations" >
+    <option value="" disabled="disabled" selected="selected" >Choose a Location</option>
+		<option value="{{item}}" *ngFor="let item of city_name">{{item}}</option>
+  </select>
+</div>
+	<button class="submit"  (click)="onclick(sqft.value,cityvalue.value)" type="button">Estimate Price</button>
+  <div id="uiEstimatedPrice" class="result">	<h2>{{price}}</h2>
+   </div>
+
