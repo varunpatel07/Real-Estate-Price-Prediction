@@ -24,9 +24,16 @@ export class AppComponent implements OnInit{
     this.bhkprice.getcities().subscribe((data:any[])=>{
       this.city_name=data["locations"];
       //console.log(this.city_name)
-    })
+    },err=>{
+      alert("something went wrong")
+    }
+          
+    )
     
   }
+  
+
+  
 
   onclick(sqft,city){
     this.d.city=city;
